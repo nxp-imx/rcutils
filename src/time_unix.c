@@ -27,7 +27,9 @@
 
 #if defined(__ZEPHYR__)
 #include <version.h>
-#if ZEPHYR_VERSION_CODE >= ZEPHYR_VERSION(3, 1, 0)
+#if ZEPHYR_VERSION_CODE >= ZEPHYR_VERSION(4, 2, 0)
+#include <zephyr/posix/sys/time.h>
+#elif ZEPHYR_VERSION_CODE >= ZEPHYR_VERSION(3, 1, 0)
 #include <zephyr/posix/time.h>  //  Points to Zephyr toolchain posix time implementation
 #else
 #include <posix/time.h>  //  Points to Zephyr toolchain posix time implementation
